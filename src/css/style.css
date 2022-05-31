@@ -1,107 +1,153 @@
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+*{
+    font-family: Arial;
 }
-
-/* CABEÇALHO */
-.filtersContainer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 30px;
-}
-
-.estiloGeralBotoes{
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    font-size: 0.9rem;
-}
-
-.estiloGeralBotoes--mostrarTodos {
-    color: black;
-    background-color: #d3d3d3;
-}
-
-.estiloGeralBotoes--filtrarHortifruti {
-    background-color: tomato;
-    color: white;
-}
-
-.containerBuscaPorNome {
-    display: flex;
-    justify-content: space-between;
-}
-
-.campoBuscaPorNome {
-    border-radius: 5px 0 0 5px;
-    border: 1px solid black;
-    padding: 0 10px;
-}
-
-.estiloGeralBotoes--botaoBuscaPorNome {
-    background-color: rgb(17, 17, 20);
-    color: white;
-    border-radius: 0 5px 5px 0;
-}
-
-/* CONTEÚDO */
-main{}
-
-.containerListaProdutos {
+header{
+    height: 55px;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.containerListaProdutos ul {
-    list-style: none;
     text-align: center;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 1);
+}
+header h1{
+    font-weight: 600;
+    font-size: 20px;
+}
+.princ_div{
+    margin-left: 146px;
+    margin-right: 146px;
+    margin-top: 94px;
+    width: 80%;
+    height: 828px;
+}
+.pesquisa-buttons{
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.container_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+
+}
+.pesquisa-buttons .pesquisa_space{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 350px;
+}
+.button{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-}
-
-.containerListaProdutos ul li {
-    color: black;
-    font-weight: bold;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: ease-in-out .1s;
-    width: 20%;
-}
-
-.containerListaProdutos ul li:hover {
-    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
-}
-
-.containerListaProdutos ul li img {
-    width: 100%;
-    max-width: 80px;
-}
-
-.containerListaProdutos ul li h3 {
-    font-size: 1.5rem;
-}
-
-.containerListaProdutos ul li p {
-    font-size: 1.5rem;
-}
-.containerListaProdutos ul li span {
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-/* PREÇO TOTAL */
-.containerPrecoTotal{
-    text-align: center;
-}
-.containerPrecoTotal p{
-    font-size: 1.4rem;
+    align-items: center;
+    padding: 14px 26px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+    background-color: rgba(18, 184, 134, 0.05);
+    border: 1.5px solid rgba(18, 184, 134, 0.05);
+    border-radius: 8px;
+    color: #12B886;
     font-weight: 600;
 }
-.containerPrecoTotal p span{}
+.button:hover{
+    background-color: #12B886;
+    color: white;
+    cursor: pointer;
+}
+input{
+    width: 324px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: F1F3F5;
+    color: #515252;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 15px;
+}
+.button-pes{
+    background-color: #12B886;
+    border: 1.5px solid rgba(18, 184, 134, 0.05);
+    border-radius: 8px;
+    margin-left: 10px;
+    width: 59px;
+    height: 56px;
+}
+.button-pes:hover{
+    background-color: black;
+    cursor: pointer;
+}
+.preco_produtos{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    box-shadow: 0px 4px 30px -40px rgba(0, 0, 0, 1);
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.mini_tag{
+    padding-top: 12px;
+    border-radius: 50px #12b886;
+    color: #12B886;
+    margin-left: 20px;
+}
+.p_valor{
+    margin-left: 20px;
+    padding-top: 12px;
+}
+.valor{
+    
+    margin-left: 770px;
+    margin-top: 6px;
+    background-color: #212529;
+    color: white;
+    width: 80px;
+    border-radius: 4px;
+    height: 35px;
+    padding: 8px 0 0 20px;
+    font-weight: 600;
+
+}
+.container_card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.container_card li {
+    margin-right: 27px;
+    margin-top: 30px;
+    border-radius: 7px;
+}
+.container_card li:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.container_card li h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 7px 0 7px;
+    color: #212529;
+}
+.container_card li span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #868E96;
+}
+.container_card li p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #212529;
+    margin-top: 7px;
+}
