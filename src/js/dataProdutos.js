@@ -42,7 +42,7 @@ const produtos = [
         img: './src/img/bolo.png'
     },
     {
-        nome: 'Torta de Maça',
+        nome: 'Torta de Maçã',
         preco: 4,
         secao: 'Hortifruti',
         categoria: 'torta',

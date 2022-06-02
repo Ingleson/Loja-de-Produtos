@@ -8,6 +8,8 @@ const pani = document.querySelector(".pani");
 
 const lati = document.querySelector(".lati");
 
+const buttons = document.querySelectorAll('.button');
+
 const containerValor = document.querySelector(".valor");
 
 const soma = {
@@ -15,31 +17,31 @@ const soma = {
 }
 
 function percorrerMap(array) {
-    
+
     array.map((produto, i) => {
-    
+
         let card = document.createElement("li");
-    
+
         let img = document.createElement("img");
-    
+
         let productName = document.createElement("h3");
-    
+
         let productSection = document.createElement("span");
-    
+
         let productPrice = document.createElement("p");
 
-    
-    
-        img.src = produto.img;  
+
+
+        img.src = produto.img;
         productName.innerText = produto.nome;
-        productPrice.innerText = `R$${produto.preco}`;
+        productPrice.innerText = `R$ ${produto.preco}`;
         productSection.innerText = produto.secao;
-    
+
         card.appendChild(img);
         card.appendChild(productName);
         card.appendChild(productSection);
         card.appendChild(productPrice);
-    
+
         container.appendChild(card);
     })
 }
@@ -51,36 +53,38 @@ function percorrerMapPreco(array) {
     soma.valorTotal = 0;
 
     array.map((produto, i) => {
-    soma.valorTotal += produto.preco
+        soma.valorTotal += produto.preco
     })
     soma.valorTotal.innerText = soma.valorTotal;
     containerValor.append(`R$ ${soma.valorTotal}`);
-    
+
 }
 percorrerMapPreco(produtos);
 
 
 todos.addEventListener("click", event => {
 
- container.innerHTML = '';
+    container.innerHTML = '';
 
- percorrerMap(produtos);
- percorrerMapPreco(produtos);
+    fix(event.target.innerText);
+    percorrerMap(produtos);
+    percorrerMapPreco(produtos);
 
 });
 
 horti.addEventListener("click", event => {
-    
+
     container.innerHTML = '';
-    
+
     const arrayHortifruti = [];
 
-    for(let i = 0; i < produtos.length; i++){
-        if(produtos[i].secao === 'Hortifruti'){
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].secao === 'Hortifruti') {
             arrayHortifruti.push(produtos[i]);
         }
     }
 
+    fix(event.target.innerText)
     percorrerMap(arrayHortifruti);
     percorrerMapPreco(arrayHortifruti);
 });
@@ -91,12 +95,13 @@ pani.addEventListener("click", event => {
 
     const arrayPanificadora = [];
 
-    for(let i = 0; i < produtos.length; i++){
-        if(produtos[i].secao === "Panificadora"){
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].secao === "Panificadora") {
             arrayPanificadora.push(produtos[i]);
         }
     }
 
+    fix(event.target.innerText);
     percorrerMap(arrayPanificadora);
     percorrerMapPreco(arrayPanificadora);
 });
@@ -107,43 +112,61 @@ lati.addEventListener("click", event => {
 
     const arrayLaticinios = [];
 
-    for (let i = 0; i < produtos.length; i++){
-        if (produtos[i].secao === 'Laticínio'){
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].secao === 'Laticínio') {
             arrayLaticinios.push(produtos[i])
         }
     }
+
+    fix(event.target.innerText);
     percorrerMap(arrayLaticinios);
     percorrerMapPreco(arrayLaticinios);
 })
 
-function filterCards(event){
+function filterCards(event) {
 
     container.innerHTML = '';
     soma.valorTotal = 0;
 
     const buttonPesquisa = document.querySelector('.button-pes');
-    const inputPesquisa= document.querySelector('.input-pesquisa');
+    const inputPesquisa = document.querySelector('.input-pesquisa');
 
     const valueInput = inputPesquisa.value.toLowerCase();
 
     const produtosFiltrados = [];
-    
+
     event.preventDefault();
-    for (let i = 0; i < produtos.length; i++){
-        if(produtos[i].nome.toLowerCase().includes(valueInput)){
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].nome.toLowerCase().includes(valueInput)) {
             produtosFiltrados.push(produtos[i]);
-        }
+        }   
     }
+
+
     percorrerMap(produtosFiltrados);
     percorrerMapPreco(produtosFiltrados);
 }
+
+
 
 function eventoPesquisa() {
 
     const buttonPesquisa = document.querySelector('.button-pes');
     const inputPesquisa = document.querySelector('.input-pesquisa');
 
-    buttonPesquisa.addEventListener('click',filterCards);
-    inputPesquisa.addEventListener('input',filterCards);
+    buttonPesquisa.addEventListener('click', filterCards);
+    inputPesquisa.addEventListener('input', filterCards);
 }
 eventoPesquisa();
+
+function fix(equalize){
+
+    for(let i = 0; i < buttons.length; i++){
+        if(buttons[i].innerText === equalize) {
+            buttons[i].classList.add('fix-mode');
+        }
+        else{
+            buttons[i].classList.remove('fix-mode');
+        }
+    }
+}
