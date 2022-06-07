@@ -14,39 +14,52 @@
     <header>
         <h1>Shop now</h1>
     </header>
-    <main>
-        <div class="princ_div">
-            <section class="pesquisa-buttons">
-                <div class="container_buttons">
-                    <button class="button todos">Todos Produtos</button>
-                    <button class="button horti">Hortifruit</button>
-                    <button class="button pani">Panificadora</button>
-                    <button class="button lati">Laticínios</button>
-                </div>
-                <div class="pesquisa_space">
-                    <input type="text" placeholder="Pesquisar por" class="input-pesquisa">
-                    <button class="button-pes">
-                        <img src="/src/img/magnifying-glass-solid.svg" alt="">
-                    </button>
-                </div>
 
-            </section>
-
-            <div class="preco_produtos">
-                <div class="base-preco">
-                <span class="mini_tag">!</span>
-                <p class="p_valor">Valor total dos produtos da seção selecionada</p>
+    <div class="princ_div">
+        <section class="pesquisa-buttons">
+            <div class="container_buttons">
+                <button class="button todos">Todos Produtos</button>
+                <button class="button horti">Hortifruit</button>
+                <button class="button pani">Panificadora</button>
+                <button class="button lati">Laticínios</button>
             </div>
-                <p class="valor"></p>
+            <div class="pesquisa_space">
+                <input type="text" placeholder="Pesquisar por" class="input-pesquisa">
+                <button class="button-pes">
+                    <img src="./src/img/search.png" alt="">
+                </button>
             </div>
 
+        </section>
+        <main>
             <section class="produtos">
                 <ul class="container_card">
 
                 </ul>
             </section>
-        </div>
-    </main>
+
+            <aside class="cart-section">
+                <div class="header-carrinho">
+                    <img src="./src/img/.png" alt="">
+                    <span>Carrinho</span>
+                </div>
+                <ul class="vazio-carrinho">
+                    <img src="./src/img/shopping-bag.png" alt="">
+                    <p>Por enquanto não temos produtos no carrinho</p>
+                </ul>
+                <ul class="valores">
+                    <div class="quant">
+                        <p>Quantidade</p>
+                        <p class="quantTotal"></p>
+                    </div>
+                    <div class="tot">
+                        <p>Total</p>
+                        <p class="preTotal"></p>
+                    </div>
+                </ul>
+            </aside>
+        </main>
+    </div>
 
     <script src="src/js/dataProdutos.js"></script>
     <script src="src/js/script.js"></script>
